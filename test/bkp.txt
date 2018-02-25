@@ -1,0 +1,35 @@
+var assert = require('assert');
+var LoginPage = require ( '../test/Model/form.page' );
+
+describe('Login Page', function () {
+	it('should let you log in', function () {
+		LoginPage.open();
+		browser.windowHandleMaximize();
+		browser.waitForVisible('.promotion-awareness-overlay__content', 9999999999);
+		LoginPage.clicked();
+		//browser.click('.promotion-awareness-overlay__close-button');
+		browser.click('.btn-search-magnifier');
+		browser.waitForVisible('.search-input__form', 9999999999);
+		LoginPage.game();
+		browser.moveToObject('.tile-cover__footer=Mayfair Roulette');
+		browser.waitForVisible('.tile-content__description', 9999999999);
+		LoginPage.clicked('.o-btn.o-btn--more');
+	//	browser.click('.o-btn.o-btn--more');
+		browser.waitForVisible('.tile-details__description', 9999999999);
+		browser.scroll('.o-btn');
+		browser.elementActive('.tile-details__buttons');
+		browser.moveToObject('button=Play Now');
+		browser.click('button=Play Now');
+		browser.waitForVisible('.login-component__wrapper', 9999999999);
+		browser.pause(9000);
+		
+		
+
+	   
+	   
+	   
+	   
+	
+	});
+});
+
